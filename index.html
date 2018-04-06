@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Facepunch avatar + background tester by rtm516</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Cache-control" content="public">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+        <meta name="language" content="english">
+        <meta name="robots" content="index, follow">
+        <meta name="twitter:card" content="summary">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Forum">
+
+        <link rel="icon" href="https://files.facepunch.com/s/87697c3e8fad.png/32x32">
+        <link rel="shortcut icon" href="https://files.facepunch.com/s/87697c3e8fad.png/32x32">
+        <link rel="apple-touch-icon-precomposed" href="https://files.facepunch.com/s/87697c3e8fad.png/256x256">
+
+        <meta property="og:title" content="Background Request v1 - Creationism Corner">
+
+        <link rel="stylesheet" href="https://forum.facepunch.com/styles/main?q=8d59badbfcd00a3">
+
+        <script src="https://forum.facepunch.com/manifest?3c9f9e8f-a9ec-4d15-ad34-66deb62c7e8e"></script>
+        <script src="https://forum.facepunch.com/public/script.js?3c9f9e8f-a9ec-4d15-ad34-66deb62c7e8e"></script>
+
+        <link rel="alternate" type="application/rss+xml" title="Forum Blog Feed" href="https://forum.facepunch.com/rss/blog/" />
+
+        <link rel="alternate" type="application/rss+xml" title="Forum Commit Feed" href="https://forum.facepunch.com/rss/commits/" />
+
+        <script src="https://cdn.iframe.ly/embed.js?api_key=7fc9a3487e19e580a95e4c"></script>
+
+        <style>
+            #inputForm tbody tr td {
+                padding-bottom: 5px;
+                vertical-align: middle;
+            }
+        </style>
+
+        <script>
+            function createAvatarPanel(avatar = "", background = "", avatarWidth = 64, avatarHeight = 64) {
+                $("#post_area").html('<postrender input="{&quot;ops&quot;:[{&quot;insert&quot;:&quot;Facepunch avatar + background tester built by &quot;},{&quot;attributes&quot;:{&quot;link&quot;:&quot;https://forum.facepunch.com/u/jclc/rtm516/&quot;},&quot;insert&quot;:&quot;rtm516&quot;},{&quot;insert&quot;:&quot;.\\n&quot;}]}" country="United Kingdom" ipaddress="" anchor="#" posted="' + (Math.round((new Date()).getTime() / 1000) - 1) + '" postnumber="1" postid="0" forumid="0" edittime="0" editinfo="" userid="109824" username="Avatar tester" threadid="1" posts="1" threads="1" joindate="1 Jan 1970" userurl="https://forum.facepunch.com/u/jclc/rtm516/" userbackground="' + background + '" avatar="' + avatar + '" avatarstyle="width: ' + avatarWidth + 'px; height:' + avatarHeight + 'px" usersearchurl="https://forum.facepunch.com/search/user/jclc/" userclass="username" leveltitle="LVL10 - 50% to LVL11" levelclass="level-10" level="10"></postrender>');
+                forum.$destroy();
+                forum = new Vue({
+                    el: '#forum'
+                });
+            }
+
+            function generateAvatarPanel() {
+                createAvatarPanel($("input[name=avatar]").val(), $("input[name=background]").val(), $("input[name=avatarWidth]").val(), $("input[name=avatarHeight]").val())
+            }
+        </script>
+    </head>
+
+    <body class="page-forum forum_cc not-wide-design">
+        <div id="wrapper" style="padding-bottom:0px;">
+            <div id="content" style="border-top:1px solid #444;margin-bottom: 20px;">
+                <div id="forum_head" v-cloak>
+                    <div class="section threadviewsection">
+                        <div class="container postlist">
+                            <div class="postlist">
+                                <div class="forumpanel is-column-mobile postblock">
+                                    <div class="postmain">
+                                        <div class="postrender">
+                                            <div class="postinner">
+                                                <div class="postcontent">
+                                                    <div class="expandable postexpand expandable-open" style="">
+                                                        <div class="quill-editor postbody">
+                                                            <div class="ql-container ql-snow ql-disabled">
+                                                                <div class="ql-editor" data-gramm="false" contenteditable="false" style="min-height: 119px;">
+                                                                    <p>
+                                                                        <table id="inputForm">
+                                                                            <tr>
+                                                                                <td>Avatar URL: </td>
+                                                                                <td><input type="text" name="avatar"></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Avatar Size: </td>
+                                                                                <td><input type="number" name="avatarWidth" value=64> x <input type="number" name="avatarHeight" value=64></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>Background URL: </td>
+                                                                                <td><input type="text" name="background"></td>
+                                                                            </tr>
+                                                                        </table>
+                                                                        <input type="button" onclick="generateAvatarPanel()" value="Generate" style="cursor:pointer;">
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    var forum_head = new Vue({
+                        el: '#forum_head'
+                    });
+                </script>
+            </div>
+            
+            <div id="content" style="border-top:1px solid #444;">
+                <div id="forum" v-cloak>
+                    <div class="section threadviewsection">
+                        <div class="container postlist">
+                            <div class="postlist">
+                                <div class="forumpanel is-column-mobile postblock">
+                                    <div class="postmain" id="post_area">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    var forum = new Vue({
+                        el: '#forum'
+                    });
+                    createAvatarPanel();
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
